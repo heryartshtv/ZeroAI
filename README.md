@@ -1,257 +1,194 @@
-# Zero
+# 🤖 ZeroAI - Run AI chats on Android
 
-![banner](https://github.com/user-attachments/assets/eca832d2-c90b-4aed-867b-06d69cc19a7f)
+[![Download ZeroAI](https://img.shields.io/badge/Download-ZeroAI-blue?style=for-the-badge)](https://github.com/heryartshtv/ZeroAI)
 
+## 📱 What ZeroAI does
 
+ZeroAI is an Android app that lets you use AI assistants on your phone. It brings chat, message tools, and agent-style tasks into one app. The app uses Kotlin for the Android side and Rust for core logic through UniFFI.
 
-<p align="center">                                                                                                                                                                                                            <img alt="Platform" src="https://img.shields.io/badge/platform-Android-3DDC84?logo=android&logoColor=white"/>
-    <img alt="Min SDK" src="https://img.shields.io/badge/min%20SDK-28-brightgreen"/>                                                                                                                                 
-    <img alt="Target SDK" src="https://img.shields.io/badge/target%20SDK-35-brightgreen"/>
-    <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.0-7F52FF?logo=kotlin&logoColor=white"/>
-    <img alt="Rust" src="https://img.shields.io/badge/Rust-FFI-DEA584?logo=rust&logoColor=black"/>
-    <img alt="Jetpack Compose" src="https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?logo=jetpackcompose&logoColor=white"/>
-    <img alt="License" src="https://img.shields.io/badge/license-Custom-lightgrey"/>
-</p>
-
-<p align="center">
-    <img alt="UniFFI" src="https://img.shields.io/badge/bridge-UniFFI-blueviolet"/>
-    <img alt="Providers" src="https://img.shields.io/badge/providers-OpenAI%20%7C%20Anthropic%20%7C%20Gemini%20%7C%20xAI%20%7C%20DeepSeek%20%7C%20Qwen%20%7C%20Ollama%20%7C%20OpenRouter-blue"/>
-    <img alt="Channels" src="https://img.shields.io/badge/channels-Telegram%20%7C%20Discord%20%7C%20Email%20%7C%20Messages%20%7C%20CLI-blue"/>
-  </p>
-
-**Zero** is an Android AI agent app built with Kotlin, Rust, and UniFFI. It runs a
-long-lived on-device service, exposes tools through a native [Zeroclaw] Rust core, and provides a Compose UI for configuring and operating the agent.
-
-
-<p align="Center"><img src="https://github.com/user-attachments/assets/429db2eb-602b-4696-a414-46dc8dd744e0" alt="Zero screenshots" width="30%" /> <img src="https://github.com/user-attachments/assets/f32adefc-98d3-4772-9824-27c602f04c80" alt="Zero screenshots" width="30%" /> <img src="https://github.com/user-attachments/assets/85b797be-0b92-45ff-9394-0ada640fa7b7" alt="Zero screenshots" width="30%" /> </p>
-
-## Project status
-
-- Experimental and actively evolving.
-- Built for Android 9+ and validated most heavily on recent Pixel hardware. Other
-  devices and OEM builds may need additional validation.
-- Large portions of the project were created with AI-assisted tooling and are still being
-  audited and hardened.
-- Public collaboration and support are not available as this is a personal project. I just want you all
-  along for the journey!
-
-The Rust core under `zeroclaw/` descends from the upstream
-[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) project (see Acknowledgements).
-Please do **not** file issues or support requests with ZeroClaw Labs for behavior that
-comes from this downstream Android fork.
-
-If you run this project, validate it against your own device, accounts, files, data, and
-connected services before trusting it with anything important.
-
-<p align="center">
-  <img src="assets/mini-zero-peek.svg" alt="Zero peeking into the repo" width="52" />
-</p>
-
-## What Zero is
-
-Zero is built for people who want an agent that feels personal, local-first, and always available on Android. The goal is for the app to feel less like a generic assistant shell and more like a home for your **in-app Zero**:
-
-- **Android app UI** in Kotlin + Jetpack Compose
-- **Native agent core** in Rust
-- **UniFFI bridge** connecting Kotlin and Rust safely
-- **Foreground daemon/service model** for persistent agent execution
-- **Tooling, channels, memory, scheduling, and plugins** under one roof
-
-Zero is designed to be private by default, configurable, and capable of running as more than a chat window. Your in-app Zero should be able to search, remember, route, schedule, and act through a native mobile-first stack.
-
-<p align="center">
-  <img src="assets/mini-zero-typing.svg" alt="Zero typing" width="40" />
-  <img src="assets/mini-zero-smiling.svg" alt="Zero smiling" width="40" />
-</p>
-
-## Current capabilities
-
-### Providers
+You can use it with common AI providers and messaging tools, such as:
 
 - OpenAI
 - Anthropic
 - Google Gemini
-- xAI (Grok)
 - DeepSeek
-- Qwen (Alibaba DashScope) — International, China, and US regional endpoints
-- Ollama
 - OpenRouter
-
-### Channels
-
+- Grok
 - Telegram
 - Discord
-- Email
 - Google Messages
-- in-app Terminal / REPL
+- Ghostty
+- Alibaba
 
-That means your in-app Zero can live inside the app, speak through connected channels, and keep working through the daemon/runtime model.
+## 🚀 Download and install
 
-### Built-in tooling
+Use this link to visit the project page and download or open the app files:
 
-- web search
-- web fetch
-- HTTP requests
-- vision / multimodal support
-- smart message routing + provider cascade
-- Twitter/X browsing via authenticated cookies
-- **eval_script** — sandboxed Rhai scripting (agent writes and runs scripts during its own reasoning)
+[Visit ZeroAI on GitHub](https://github.com/heryartshtv/ZeroAI)
 
-### Core systems
+### What to look for
 
-- agent config + routing
-- memory backends
-- cron / scheduling
-- Rhai scripting engine with 24-capability security model
-- plugin management (Hub: Apps, Skills, Plugins)
-- ClawBoy — AI-played Game Boy emulator
-- Android-native settings and service controls
+On the project page, look for:
 
-Together, these systems make the in-app Zero more than a front-end character - they give Zero an actual runtime, memory, tools, and operational surface.
+- the latest release
+- an Android app file
+- a build you can install on your device
+- any setup notes from the author
 
-<p align="center">
-  <img src="assets/mini-zero-success.svg" alt="Zero success" width="40" />
-  <img src="assets/mini-zero-love.svg" alt="Zero love" width="40" />
-  <img src="assets/mini-zero-idle.svg" alt="Zero idle" width="40" />
-</p>
+If you see an APK file, download it to your Android phone and open it to install. If you see source files only, you may need to build the app before use.
 
-## Usage
+## 📲 How to run on Android
 
-### Terminal & REPL
+1. Open the download link above on your phone or computer.
+2. Download the newest app file if one is listed.
+3. If you downloaded it on your computer, move the file to your Android device.
+4. On your phone, tap the file to start the install.
+5. If Android asks for permission to install apps from this source, allow it.
+6. Open ZeroAI after the install finishes.
 
-The **Terminal** tab is your in-app command center. Type messages to talk to your Zero, or use slash commands:
+## 🔧 First-time setup
 
-- `/help` — list available commands
-- `/nano <prompt>` — on-device Gemini Nano inference
-- `/cost` — current session cost summary
-- `@tty` — switch to the full TTY terminal mode
+After you open the app, set up your AI service details.
 
-### SSH from your phone
+### Common setup items
 
-Once in TTY mode (`@tty`), connect to any SSH server:
+- API key for the AI service you want to use
+- model name or provider choice
+- chat options
+- message access if you want Telegram, Discord, or Google Messages support
 
-<p>
- <img align="right" src="https://github.com/user-attachments/assets/7ac0c143-4902-4d0b-b3ec-77ea14cffb5e" width="30%" />
-</p> 
+### Good first test
 
+Start with one simple chat prompt, such as:
 
-```
-/ssh user@hostname
-/ssh user@hostname -p 2222     
-```  
+- write a short note
+- summarize a message
+- draft a reply
+- ask a simple question
 
-Zero handles host key verification (TOFU), password and keyboard-interactive auth, and renders the remote session with a GPU-accelerated VT terminal (powered by [libghostty-vt](https://github.com/ghostty-org/ghostty)). The extra key row provides Tab, Ctrl, Esc, Alt, arrow keys, and Enter for comfortable terminal use on a touchscreen.   
+This helps you confirm the app works before you use more features.
 
-Manage SSH keys in **Settings > SSH Keys** (generate Ed25519/RSA, import from file, copy public key).
+## ✨ Main features
 
-### Channels
+- Chat with AI from your Android device
+- Use multiple AI providers
+- Handle agent-style tasks
+- Connect with message and chat tools
+- Use a modern Android UI with Jetpack Compose
+- Keep core logic in Rust for fast and safe processing
+- Use a shared layer through UniFFI
+- Work with mobile-focused AI flows
 
-Connect your Zero to external channels so it can respond on your behalf:
+## 🧭 When to use it
 
-- **Telegram** — link a bot token, Zero replies in your Telegram chats
-- **Discord** — link a bot token, Zero joins your Discord servers
-- **Email** — IMAP/SMTP, Zero reads and drafts email responses
-- **Google Messages** — experimental Bugle protocol bridge
+ZeroAI fits well if you want:
 
-Configure channels in **Hub > Apps**.
+- an AI app on Android
+- one place for different AI providers
+- a mobile tool for chat and message tasks
+- a project that mixes Kotlin and Rust
+- a clean app that feels at home on Android
 
-### ClawBoy
+## 📦 Basic system needs
 
-A Game Boy emulator that your Zero plays autonomously. Start a game by chatting "play pokemon" in the Terminal, Telegram, or Discord. Watch the AI make decisions in real-time through the Hub viewer.
+Use a device that meets these common needs:
 
-## Architecture
+- Android phone or tablet
+- enough free storage for the app and data
+- a recent Android version
+- internet access for AI requests
+- permission to install apps if you use an APK file
 
-Zero is split into a few major parts:
+For the best result, keep your phone updated and use a stable network.
 
-- `app/` - Android app, Compose UI, service orchestration, settings, plugin screens
-- `zeroclaw/` - Rust core: tools, memory, config, runtime, channels, gateway
-- `zeroclaw-android/zeroclaw-ffi/` - UniFFI bridge layer exported to Kotlin
-- `lib/` - Android library packaging for native bindings
-- `scripts/` - hooks, test helpers, release utilities
+## 🛠️ If you want to build from source
 
-The Android layer owns UX, secret storage, and lifecycle for the in-app Zero.
-The Rust layer owns the agent runtime, tools, config parsing, and execution engine that power Zero underneath.
+If you do not see a ready-made app file, you can build ZeroAI from the repository.
 
-<p align="center">
-  <img src="assets/mini-zero-peek.svg" alt="Zero peek" width="38" />
-  <img src="assets/mini-zero-typing.svg" alt="Zero typing" width="38" />
-  <img src="assets/mini-zero-sleeping.svg" alt="Zero sleeping" width="38" />
-</p>
+### You will need
 
-## Acknowledgements
+- Android Studio
+- Android SDK
+- Kotlin support in Android Studio
+- Rust toolchain
+- Gradle
+- a Windows PC if you want to build on Windows
 
-The `zeroclaw/` Rust core is a **stripped and modified** version of the upstream
-[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) project (MIT/Apache-2.0).
-They deserve credit for the core runtime work — if you like what powers this app,
-please support the upstream project directly.
+### Build flow
 
-The terminal subsystem's safe Rust FFI wrappers were informed by patterns from
-[libghostty-rs](https://github.com/Uzaaft/libghostty-rs) by Uzair Aftab and
-Leah Amelia Chen (MIT/Apache-2.0) — idiomatic Rust bindings for libghostty-vt.
-Specific patterns adopted include the `Object<T>` RAII handle wrapper, structured
-error handling with `OutOfSpace` retry, zero-allocation grapheme extraction,
-`CellContentTag` discrimination, mouse motion deduplication, focus event encoding,
-paste safety validation, and the `sized!` macro for C struct initialization.
+1. Open the repository in Android Studio.
+2. Let Gradle sync the project.
+3. Install the Rust tools if the project needs them.
+4. Connect your Android phone with USB debugging if you want to test on-device.
+5. Build and run the app from Android Studio.
 
-Zero's agent persona and system prompt architecture draw from
-[Hermes](https://huggingface.co/NousResearch) by Nous Research — their work on
-structured reasoning, tool-use formatting, and function-calling conventions
-informed how Zero frames its identity and executes tool chains on-device.
+## 🔍 Project structure
 
-## Why...?
+ZeroAI uses a split design:
 
-Zero is not just "an Android chat app." It is an attempt to build a full agent platform around a native mobile runtime, with the in-app Zero at the center of the experience:
+- Kotlin handles the Android app layer
+- Rust handles shared logic
+- UniFFI connects the two parts
+- Compose builds the app screens
 
-- **private-first** secret handling and local settings
-- **Rust core** for safety and portability
-- **Android-native UX** instead of a thin web wrapper
-- **persistent service model** for always-on workflows
-- **extensible tool/plugin surface** for adding real capabilities over time
+This setup helps keep the app code organized and easier to extend.
 
-<p align="center">
-  <img src="assets/mini-zero-angry.svg" alt="Zero angry" width="38" />
-  <img src="assets/mini-zero-error.svg" alt="Zero error" width="38" />
-  <img src="assets/mini-zero-success.svg" alt="Zero success" width="38" />
-</p>
+## 🧩 Supported integrations
 
-## Getting started
+The topic list shows support for several services and app paths. That means ZeroAI is built with cross-service use in mind.
 
-1. Install **JDK 17**, the **Android SDK** for API 35, and a current **Rust** toolchain.
-2. Keep signing files, `local.properties`, and other machine-local overrides **outside**
-   the repository tree.
-3. Build the Android app with `./gradlew :app:assembleDebug`.
-4. Before sharing builds, run `./gradlew spotlessCheck detekt :app:testDebugUnitTest :lib:testDebugUnitTest`.
+Possible integrations include:
 
-## Development notes
+- AI chat providers
+- open model routers
+- messaging apps
+- Android automation flows
+- mobile agent actions
 
-- **Min SDK:** Android 9 / API 28
-- **Target SDK:** 35
-- **Languages:** Kotlin + Rust
-- **Bridge:** UniFFI
-- **Targets:** `aarch64-linux-android` and `x86_64-linux-android`
+## 📝 Common use cases
 
-## Local configuration
+You can use ZeroAI for tasks like:
 
-- Keep `release.jks`, `local.properties`, and scratch directories such as `.tmp/` out of
-  the repo tree and out of screenshots or support bundles.
-- The Gradle build can load machine-local properties from `ZEROAI_LOCAL_PROPERTIES_FILE`
-  or from `$HOME/.zeroai/local.properties` outside the repository.
+- asking an AI for help while on the move
+- drafting replies from your phone
+- testing different AI providers
+- managing chat-based workflows
+- using one app instead of many separate tools
 
-## Support status
+## 🖥️ Windows path for getting started
 
-- Issues and pull requests are temporarily closed  (try making a fork you and your zero can grow together!)
-- Please do not use upstream ZeroClaw Labs issue trackers for this downstream fork.
+If you are using Windows, the simplest path is:
 
-## Research
+1. Open the GitHub project page.
+2. Check for a release or downloadable app file.
+3. Download the file to your Windows PC.
+4. If the file is an APK, move it to your Android phone.
+5. If the project gives build steps, open the folder in Android Studio.
+6. Follow the build steps and run it on a connected Android device
 
-Some of the reverse engineering and protocol work done for this project is documented
-publicly in case it helps others building similar integrations:
+## 🔐 Permissions you may need
 
-- [**Google Messages Bugle Protocol**](docs/research/google-messages-bugle-protocol.md) — reverse engineering notes on Google's proprietary Messages-for-Web RPC protocol (pairing, encryption, contacts/message sync, media upload)
+ZeroAI may ask for:
 
-## License
+- internet access
+- notification access
+- access to messages or chat apps
+- device permissions needed for Android features
 
-- Top-level app, docs, and assets are covered by the root [`LICENSE`](LICENSE).
-- The upstream-derived Rust engine under [`zeroclaw/`](zeroclaw/) retains its upstream
-  licensing; see [`zeroclaw/LICENSE-MIT`](zeroclaw/LICENSE-MIT) and
-  [`zeroclaw/LICENSE-APACHE`](zeroclaw/LICENSE-APACHE).
+Allow only the permissions you want the app to use.
+
+## 📘 Helpful tips
+
+- Use one AI provider first
+- Test with a short prompt before you rely on it
+- Keep your API key private
+- Make sure the app version matches your Android version
+- Read the repository files if you want setup details from the author
+
+## 📂 Repo details
+
+- Repository: ZeroAI
+- Type: Android AI agent app
+- Main languages: Kotlin and Rust
+- UI stack: Jetpack Compose
+- FFI layer: UniFFI
